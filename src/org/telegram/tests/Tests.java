@@ -1,5 +1,5 @@
 /**
- * Created by ilya on 18.12.13.
+ * Created by ilya-murzinov on 18.12.13.
  */
 package org.telegram.tests;
 
@@ -26,7 +26,7 @@ public class Tests extends UiAutomatorTestCase{
 
     private void findAndRunApp() throws UiObjectNotFoundException {
         UiObject settingsApp = new UiObject(new UiSelector()
-                .className("android.widget.TextView").text("Telegram"));
+                .className("android.widget.TextView").text("Телеграм"));
         settingsApp.clickAndWaitForNewWindow();
     }
 }

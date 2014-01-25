@@ -5,7 +5,7 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 
 /**
- * Created by ilya on 25.01.14.
+ * Created by ilya-murzinov on 25.01.14.
  */
 public class SearchWindow {
     private UiObject telegramIcon;

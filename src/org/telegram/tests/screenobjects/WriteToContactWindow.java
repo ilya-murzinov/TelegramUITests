@@ -5,7 +5,7 @@ import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
 
 /**
- * Created by ilya on 25.01.14.
+ * Created by ilya-murzinov on 25.01.14.
  */
 public class WriteToContactWindow {
     private UiObject contactsButton;
@@ -16,7 +16,7 @@ public class WriteToContactWindow {
 
     private WriteToContactWindow() {
         contactsButton = new UiObject(new UiSelector().resourceId("android:id/action_bar_title")
-                .text("Contacts"));
+                .text("Контакты"));
         searchButton = new UiObject(new UiSelector().resourceId("org.telegram.android:id/searchMenu"));
         menuButton = new UiObject(new UiSelector().className("android.widget.ImageButton").description("Ещё"));
     }
