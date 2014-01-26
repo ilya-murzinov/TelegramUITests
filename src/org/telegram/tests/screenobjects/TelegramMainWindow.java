@@ -60,6 +60,11 @@ public class TelegramMainWindow {
         menuItems[2].click();
         return ContactsWindow.getInstance();
     }
+    public NewGroupWindow selectNewGroupMenuItem() throws UiObjectNotFoundException {
+        clickMenuButton();
+        menuItems[0].click();
+        return NewGroupWindow.getInstance();
+    }
     public TelegramMainWindow exitMenu() {
         UiDevice.getInstance().pressBack();
         menuItems = null;
