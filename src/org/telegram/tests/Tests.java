@@ -21,6 +21,12 @@ public class Tests extends UiAutomatorTestCase{
                 .clickSearchButton()
                 .search("123")
                 .exitSearch()
+                .clickMenu()
+                .exitMenu()
+                .clickContactsButton()
+                .clickMenuButton()
+                .exitMenu()
+                .selectContactsMenuItem()
                 .clickContactsButton();
     }
 

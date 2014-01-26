@@ -1,8 +1,10 @@
 package org.telegram.tests.screenobjects;
 
+import com.android.uiautomator.core.UiDevice;
 import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
 import com.android.uiautomator.core.UiSelector;
+import org.telegram.tests.FindBy;
 
 /**
  * Created by ilya-murzinov on 25.01.14.
@@ -13,6 +15,7 @@ public class TelegramMainWindow {
     private UiObject searchButton;
     private UiObject writeToContactButton;
     private UiObject menuButton;
+    private UiObject[] menuItems;
     private UiObject dialogListLayout;
 
     //Automatically performs smoke test
@@ -37,8 +40,29 @@ public class TelegramMainWindow {
         searchButton.click();
         return SearchWindow.getInstance();
     }
-    public WriteToContactWindow clickWriteToContactButton() throws UiObjectNotFoundException {
+    public ContactsWindow clickWriteToContactButton() throws UiObjectNotFoundException {
         writeToContactButton.click();
-        return WriteToContactWindow.getInstance();
+        return ContactsWindow.getInstance();
+    }
+    public TelegramMainWindow clickMenuButton() throws UiObjectNotFoundException {
+        menuButton.click();
+        menuItems = new UiObject[]{
+                FindBy.resourceIdAndText("android:id/title", "Новая группа"),
+                FindBy.resourceIdAndText("android:id/title", "Новый секретный чат"),
+                FindBy.resourceIdAndText("android:id/title", "Контакты"),
+                FindBy.resourceIdAndText("android:id/title", "Внешний вид"),
+                FindBy.resourceIdAndText("android:id/title", "Настройки")
+        };
+        return getInstance();
+    }
+    public ContactsWindow selectContactsMenuItem() throws UiObjectNotFoundException {
+        clickMenuButton();
+        menuItems[2].click();
+        return ContactsWindow.getInstance();
+    }
+    public TelegramMainWindow exitMenu() {
+        UiDevice.getInstance().pressBack();
+        menuItems = null;
+        return getInstance();
     }
 }
