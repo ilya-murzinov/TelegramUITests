@@ -15,19 +15,9 @@ public class Tests extends UiAutomatorTestCase{
         findAndRunApp();
 
         TelegramMainWindow.getInstance()
-                .clickSearchButton()
-                .clickTelegramIcon()
-                .clickWriteToContactButton()
-                .clickSearchButton()
-                .search("123")
-                .exitSearch()
-                .clickMenu()
-                .exitMenu()
-                .clickContactsButton()
-                .clickMenuButton()
-                .exitMenu()
-                .selectContactsMenuItem()
-                .clickContactsButton();
+                .selectNewGroupMenuItem()
+                .addContact("telegram")
+                .clickDoneButton();
     }
 
     private void findAndRunApp() throws UiObjectNotFoundException {
