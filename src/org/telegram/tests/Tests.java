@@ -15,14 +15,18 @@ public class Tests extends UiAutomatorTestCase{
         findAndRunApp();
 
         TelegramMainWindow.getInstance()
-                .selectNewGroupMenuItem()
-                .addContact("telegram")
-                .clickDoneButton();
+                .clickSearchButton()
+                .clickTelegramIcon()
+                .clickWriteToContactButton()
+                .clickSearchButton()
+                .exitMenu()
+                .exitSearch()
+                .clickContactsButton();
     }
 
     private void findAndRunApp() throws UiObjectNotFoundException {
         UiObject settingsApp = new UiObject(new UiSelector()
-                .className("android.widget.TextView").text("Телеграм"));
+                .className("android.widget.TextView").text("Telegram"));
         settingsApp.clickAndWaitForNewWindow();
     }
 }
