@@ -21,6 +21,4 @@ before_script:
 script:
   - ant build
   - chmod +x $PWD/.travis_run_test.sh
-  - if $PWD/.travis_run_test.sh | grep 'FAILURES!!!'==''; then exit 0; fi
-                             echo 'One or more tests failed!'
-                             exit 1;
+  - $PWD/.travis_run_test.sh
