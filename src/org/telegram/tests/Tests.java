@@ -13,6 +13,6 @@ public class Tests extends UiAutomatorTestCase{
     }
 
     private void findAndRunApp() throws UiObjectNotFoundException {
-
+        FindBy.text("344234234234").click();
     }
 }
