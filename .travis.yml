@@ -18,4 +18,4 @@ before_script:
   - chmod +x $PWD/.travis_wait_for_emulator.sh
   - $PWD/.travis_wait_for_emulator.sh
 
-script: ant test
+script: ant build
