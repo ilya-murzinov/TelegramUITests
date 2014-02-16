@@ -3,7 +3,9 @@
  */
 package org.telegram.tests;
 
+import com.android.uiautomator.core.UiObject;
 import com.android.uiautomator.core.UiObjectNotFoundException;
+import com.android.uiautomator.core.UiSelector;
 import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 public class Tests extends UiAutomatorTestCase{
@@ -13,6 +15,22 @@ public class Tests extends UiAutomatorTestCase{
     }
 
     private void findAndRunApp() throws UiObjectNotFoundException {
-        //FindBy.text("344234234234").click();
+        try {
+            FindBy.resourceId("com.android.launcher:id/cling_dismiss").click();
+        }
+        catch (UiObjectNotFoundException ex) {
+
+        }
+
+        FindBy.classNameAndDescription("android.widget.TextView", "Apps").click();
+
+        try {
+            FindBy.resourceId("com.android.launcher:id/cling_dismiss").click();
+        }
+        catch (UiObjectNotFoundException ex) {
+
+        }
+
+        new UiObject(new UiSelector().className("android.widget.TextView").text("Telegram")).click();
     }
 }
