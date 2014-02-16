@@ -31,6 +31,6 @@ public class Tests extends UiAutomatorTestCase{
 
         }
 
-        new UiObject(new UiSelector().className("android.widget.TextView").text("Telegram")).click();
+        new UiObject(new UiSelector().className("android.widget.TextView").text("Messaging")).click();
     }
 }
