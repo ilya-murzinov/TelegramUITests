@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 adb install app/org.telegram.android-2.apk
 adb push bin/TelegramUITests.jar /data/local/tmp
